@@ -106,3 +106,11 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+DEFAULT_FROM_EMAIL = 'admin@mail.com'
+SERVER_EMAIL = 'admin@mail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = 'password'
+
