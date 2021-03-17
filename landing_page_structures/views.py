@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .forms import FreeLessonForm
+from .models import Block
 
 
 def landing_page(request):
@@ -19,4 +20,7 @@ def landing_page(request):
             return HttpResponseRedirect('/')
     else:
         form = FreeLessonForm()
-    return render(request, 'therealschool/landing_page.html', {'form': form})
+
+    blocks = Block.objects.all()
+
+    return render(request, 'therealschool/landing_page.html', {'form': form, 'blocks': blocks})

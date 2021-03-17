@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'landing_page_structures.apps.LandingPageStructuresConfig',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'filter_tags': 'landing_page_structures.templatetags.filter',
+            }
         },
     },
 ]
